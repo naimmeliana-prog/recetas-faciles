@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recetas fáciles para gente normal | Cocina rápida, barata y realista</title>
+  <meta name="description" content="Recetas de cocina fáciles, rápidas y económicas para gente normal. Ingredientes de Mercadona, Lidl, Consum y Aldi. Cocina con Airfryer, Microondas, Horno y Vitro.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background Glows -->
+  <div class="glow-bg glow-1"></div>
+  <div class="glow-bg glow-2"></div>
+
+  <!-- Header Section -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="logo-area" id="logo-btn">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          <path d="M4 12h16" style="opacity: 0.2;"/>
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" style="stroke-dasharray: 4;"/>
+          <path d="M9.5 8.5C9.5 8.5 10 6 12 6s2.5 2.5 2.5 2.5" />
+        </svg>
+        <div class="logo-text">
+          <h1>Recetas Fáciles</h1>
+          <span>para gente normal</span>
+        </div>
+      </div>
+      
+      <nav class="nav-tabs">
+        <button class="nav-tab active" data-tab="explorar-tab">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Recetas</span>
+        </button>
+        <button class="nav-tab" data-tab="nevera-tab">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <span>En mi Nevera</span>
+        </button>
+        <button class="nav-tab" data-tab="menu-tab">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <span>Menú Semanal</span>
+        </button>
+        <button class="nav-tab" data-tab="rss-tab">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+          <span>Novedades RSS</span>
+        </button>
+      </nav>
+      
+      <div class="favorites-toggle-header">
+        <button id="header-favs-btn" class="icon-btn" title="Ver mis favoritos">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="fav-badge" id="fav-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="main-content">
+    
+    <!-- TAB 1: EXPLORADOR DE RECETAS -->
+    <section id="explorar-tab" class="tab-content active">
+      <div class="hero-section">
+        <div class="hero-info">
+          <h2>¿Qué cocinamos hoy?</h2>
+          <p>Comida realista, rápida y sin tonterías. Ingredientes del súper de la esquina que valen menos de lo que cuesta un café.</p>
+        </div>
+      </div>
+
+      <div class="search-filter-section">
+        <div class="search-bar-wrapper">
+          <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="recipe-search" placeholder="Busca por plato, ingrediente (pollo, patata...) o categoría...">
+          <button id="clear-search-btn" class="clear-btn">&times;</button>
+        </div>
+
+        <div class="filters-container">
+          <!-- Quick filters row -->
+          <div class="quick-filters-row">
+            <span class="filter-label">Electrodoméstico:</span>
+            <div class="filter-group" id="filter-metodo">
+              <button class="filter-chip" data-value="Airfryer">Airfryer</button>
+              <button class="filter-chip" data-value="Microondas">Microondas</button>
+              <button class="filter-chip" data-value="Horno">Horno</button>
+              <button class="filter-chip" data-value="Vitrocerámica">Vitrocerámica</button>
+            </div>
+          </div>
+
+          <div class="quick-filters-row">
+            <span class="filter-label">Categorías:</span>
+            <div class="filter-group" id="filter-categoria">
+              <button class="filter-chip" data-value="Económicas">Económicas (&lt;5€)</button>
+              <button class="filter-chip" data-value="Cenas rápidas">Cenas rápidas (&lt;15 min)</button>
+              <button class="filter-chip" data-value="Pollo">Pollo</button>
+              <button class="filter-chip" data-value="Carne">Carne</button>
+              <button class="filter-chip" data-value="Pescado">Pescado</button>
+              <button class="filter-chip" data-value="Arroz, sopas, cremas">Arroces y Sopas</button>
+              <button class="filter-chip" data-value="Batch cooking">Batch Cooking</button>
+            </div>
+          </div>
+
+          <div class="advanced-filters-row">
+            <div class="select-wrapper">
+              <label for="filter-porciones">Comensales:</label>
+              <select id="filter-porciones">
+                <option value="todos">Todos</option>
+                <option value="1">Para 1 persona</option>
+                <option value="2">Para 2 personas</option>
+                <option value="4">Para 4 personas</option>
+              </select>
+            </div>
+            
+            <div class="select-wrapper">
+              <label for="filter-precio">Presupuesto:</label>
+              <select id="filter-precio">
+                <option value="todos">Todos</option>
+                <option value="barato">Muy barato (&lt; 2.50€)</option>
+                <option value="medio">Económico (2.50€ - 4.00€)</option>
+              </select>
+            </div>
+
+            <div class="favs-toggle-wrapper">
+              <label class="switch-container">
+                <input type="checkbox" id="filter-favs-only">
+                <span class="switch-slider"></span>
+              </label>
+              <span>Solo mis favoritos ❤️</span>
+            </div>
+
+            <button id="reset-filters-btn" class="text-btn">Limpiar Filtros</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="results-stats">
+        <p id="recipes-count-text">Mostrando 0 recetas</p>
+      </div>
+
+      <!-- Recipes Grid -->
+      <div class="recipes-grid" id="recipes-grid">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- TAB 2: EN MI NEVERA (IA/Reglas) -->
+    <section id="nevera-tab" class="tab-content">
+      <div class="tab-header-description">
+        <h2>¿Qué tienes en la nevera?</h2>
+        <p>Selecciona los ingredientes de los que dispones y nuestro motor de cocina inteligente te sugerirá qué recetas puedes preparar inmediatamente o te generará una receta a medida al instante.</p>
+      </div>
+
+      <div class="never-layout">
+        <!-- Sidebar Ingredients Picker -->
+        <div class="ingredients-picker-panel card">
+          <h3>1. Selecciona tus ingredientes</h3>
+          
+          <div class="ingredients-category-group">
+            <h4>🥩 Carnes y Proteínas</h4>
+            <div class="ingredients-chips" data-category="carnes">
+              <button class="ing-chip" data-name="Pechuga de pollo en filetes gruesos">Pechuga de pollo</button>
+              <button class="ing-chip" data-name="Alitas de pollo cortadas y limpias">Alitas de pollo</button>
+              <button class="ing-chip" data-name="Albóndigas de pollo preparadas">Albóndigas de pollo</button>
+              <button class="ing-chip" data-name="Solomillo de cerdo">Solomillo de cerdo</button>
+              <button class="ing-chip" data-name="Bacon en tiras">Bacon</button>
+              <button class="ing-chip" data-name="Taquitos de jamón york o pavo">Jamón York / Pavo</button>
+              <button class="ing-chip" data-name="Taquitos de jamón serrano">Jamón Serrano</button>
+              <button class="ing-chip" data-name="Chorizo dulce para cocinar">Chorizo</button>
+            </div>
+          </div>
+
+          <div class="ingredients-category-group">
+            <h4>🐟 Pescados y Mariscos</h4>
+            <div class="ingredients-chips" data-category="pescados">
+              <button class="ing-chip" data-name="Lomo de salmón fresco">Salmón</button>
+              <button class="ing-chip" data-name="Lomo de merluza limpio (fresco o descongelado)">Merluza</button>
+              <button class="ing-chip" data-name="Dorada fresca limpia y abierta (pedir para horno)">Dorada</button>
+              <button class="ing-chip" data-name="Lubina fresca abierta en libro (pedir en pescadería)">Lubina</button>
+              <button class="ing-chip" data-name="Atún en conserva en aceite">Atún de lata</button>
+              <button class="ing-chip" data-name="Gulas en bandeja">Gulas</button>
+              <button class="ing-chip" data-name="Gambas peladas (frescas o descongeladas)">Gambas</button>
+              <button class="ing-chip" data-name="Langostinos pelados (crudos, descongelados)">Langostinos</button>
+            </div>
+          </div>
+
+          <div class="ingredients-category-group">
+            <h4>🥦 Verduras y Hortalizas</h4>
+            <div class="ingredients-chips" data-category="verduras">
+              <button class="ing-chip" data-name="Patatas cortadas">Patatas</button>
+              <button class="ing-chip" data-name="Cebolla picada">Cebolla</button>
+              <button class="ing-chip" data-name="Ajo seco picado">Ajo</button>
+              <button class="ing-chip" data-name="Espárragos trigos finos">Espárragos tróficos</button>
+              <button class="ing-chip" data-name="Calabacín cortado fino">Calabacín</button>
+              <button class="ing-chip" data-name="Zanahoria cortada fina">Zanahoria</button>
+              <button class="ing-chip" data-name="Berenjenas grandes">Berenjenas</button>
+              <button class="ing-chip" data-name="Pimiento rojo y verde">Pimientos</button>
+              <button class="ing-chip" data-name="Setas cultivadas en tiras (frescas)">Setas</button>
+              <button class="ing-chip" data-name="Limón">Limón</button>
+            </div>
+          </div>
+
+          <div class="ingredients-category-group">
+            <h4>🧀 Lácteos, Huevos y Despensa</h4>
+            <div class="ingredients-chips" data-category="despensa">
+              <button class="ing-chip" data-name="Huevos">Huevos</button>
+              <button class="ing-chip" data-name="Queso rallado (mozzarella o gouda)">Queso rallado</button>
+              <button class="ing-chip" data-name="Quesitos en porciones (tipo El Caserío)">Quesitos</button>
+              <button class="ing-chip" data-name="Nata líquida para cocinar">Nata para cocinar</button>
+              <button class="ing-chip" data-name="Macarrones o plumas">Pasta / Macarrones</button>
+              <button class="ing-chip" data-name="Arroz de grano largo o basmati">Arroz</button>
+              <button class="ing-chip" data-name="Lentejas cocidas en conserva (frasco grande)">Lentejas de bote</button>
+              <button class="ing-chip" data-name="Garbanzos cocidos en conserva (frasco pequeño)">Garbanzos de bote</button>
+              <button class="ing-chip" data-name="Tomate frito (estilo casero)">Tomate frito</button>
+              <button class="ing-chip" data-name="Pisto de verduras de bote (Mercadona/Consum)">Pisto de bote</button>
+              <button class="ing-chip" data-name="Masa quebrada fresca">Masa quebrada</button>
+              <button class="ing-chip" data-name="Panes de pita de trigo">Pan de pita</button>
+            </div>
+          </div>
+
+          <div class="custom-ingredient-add">
+            <input type="text" id="custom-ing-input" placeholder="Añadir otro ingrediente...">
+            <button id="add-custom-ing-btn" class="icon-btn-add">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Matching results column -->
+        <div class="ingredients-results-panel">
+          <div class="selected-summary card">
+            <h3>Ingredientes seleccionados:</h3>
+            <div id="selected-ingredients-list" class="selected-ingredients-container">
+              <span class="no-ingredients-text">Ninguno. Haz clic en los ingredientes de la izquierda para seleccionarlos.</span>
+            </div>
+            
+            <div class="actions-buttons-nevera">
+              <button id="buscar-coincidencias-btn" class="primary-btn" disabled>
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                Buscar Recetas Coincidentes
+              </button>
+              <button id="generar-ia-btn" class="magic-btn" disabled>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                ¡Generar Receta por IA!
+              </button>
+            </div>
+          </div>
+
+          <div class="matching-results-container">
+            <h3 id="nevera-results-title">Recetas recomendadas</h3>
+            
+            <!-- Loading animation wrapper -->
+            <div id="nevera-loading" class="loading-wrapper hidden">
+              <div class="spinner"></div>
+              <p id="nevera-loading-text">El motor de IA está cocinando tu receta...</p>
+            </div>
+
+            <!-- Matches List / Generated Recipe Output -->
+            <div id="nevera-results-grid" class="recipes-grid">
+              <div class="info-card-empty">
+                <p>Selecciona ingredientes a la izquierda y pulsa "Buscar Recetas" o "¡Generar Receta por IA!"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: MENÚ SEMANAL -->
+    <section id="menu-tab" class="tab-content">
+      <div class="tab-header-description">
+        <h2>Planificador de Menú Semanal</h2>
+        <p>Genera automáticamente un menú equilibrado para toda la semana. Puedes modificar cualquier plato de forma individual y generar automáticamente una lista de la compra organizada para ir al súper.</p>
+        
+        <div class="menu-actions">
+          <button id="generate-menu-btn" class="primary-btn">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+            Generar Menú Equilibrado
+          </button>
+          <button id="shopping-list-btn" class="secondary-btn" disabled>
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            Ver Lista de la Compra
+          </button>
+        </div>
+      </div>
+
+      <!-- Weekly Grid -->
+      <div class="weekly-planner-grid" id="weekly-grid">
+        <!-- Rendered dynamically -->
+        <div class="info-card-empty-full">
+          <p>No hay ningún menú semanal activo. Pulsa "Generar Menú Equilibrado" para crearlo automáticamente.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: NOVEDADES RSS -->
+    <section id="rss-tab" class="tab-content">
+      <div class="tab-header-description">
+        <h2>Novedades de Blogs Gastronómicos (RSS)</h2>
+        <p>Las últimas recetas e ideas de la blogosfera gastronómica española en tiempo real. Respetando el derecho de autor, te mostramos el título, imagen y resumen, con enlaces directos para leer la preparación completa en su sitio original.</p>
+        
+        <div class="rss-controls">
+          <div class="select-wrapper">
+            <label for="rss-source-select">Ver fuente:</label>
+            <select id="rss-source-select">
+              <option value="all">Todas las fuentes</option>
+              <option value="directoalpaladar">Directo al Paladar</option>
+              <option value="recetasgratis">RecetasGratis</option>
+              <option value="petitchef">PetitChef España</option>
+              <option value="eladerezo">El Aderezo</option>
+              <option value="webosfritos">Webos Fritos</option>
+            </select>
+          </div>
+          <button id="refresh-rss-btn" class="icon-btn-text">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+            Actualizar Feeds
+          </button>
+        </div>
+      </div>
+
+      <!-- Loading skeleton / spinner for RSS -->
+      <div id="rss-loading" class="loading-wrapper hidden">
+        <div class="spinner"></div>
+        <p>Conectando con los servidores RSS de España...</p>
+      </div>
+
+      <!-- RSS Cards Grid -->
+      <div class="rss-grid" id="rss-grid">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Recipe Detail Modal -->
+  <div class="modal-overlay" id="recipe-modal">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close-btn">&times;</button>
+      
+      <div class="modal-hero" id="modal-hero-img">
+        <!-- Background image or placeholder -->
+        <div class="modal-hero-content">
+          <span class="modal-badge-metodo" id="modal-metodo">Microondas</span>
+          <h2 id="modal-title">Nombre de la Receta</h2>
+          <p id="modal-desc">Descripción corta de la receta.</p>
+        </div>
+      </div>
+
+      <div class="modal-meta-bar">
+        <div class="meta-item">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span id="modal-tiempo">15 min</span>
+        </div>
+        <div class="meta-item">
+          <span class="euro-symbol">€</span>
+          <span id="modal-coste">2.50€</span>
+        </div>
+        <div class="meta-item">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span id="modal-porciones">2 raciones</span>
+        </div>
+        <div class="meta-item">
+          <span class="difficulty-indicator" id="modal-dificultad">Fácil</span>
+        </div>
+      </div>
+
+      <div class="modal-supermarkets">
+        <span>🛒 Ingredientes disponibles en:</span>
+        <div class="supermarket-badges" id="modal-supermercados">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+      <div class="modal-body-layout">
+        <!-- Ingredients list -->
+        <div class="modal-ingredients-section">
+          <h3>Ingredientes</h3>
+          <p class="helper-text">Marca los que ya tienes para ver qué te falta:</p>
+          <ul class="ingredients-checklist" id="modal-ingredients-list">
+            <!-- Rendered dynamically -->
+          </ul>
+        </div>
+
+        <!-- Steps list -->
+        <div class="modal-steps-section">
+          <div class="steps-header">
+            <h3>Preparación</h3>
+            <button id="toggle-kitchen-mode" class="magic-btn-small">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              Modo Cocina 🍳
+            </button>
+          </div>
+          
+          <ol class="steps-list" id="modal-steps-list">
+            <!-- Rendered dynamically -->
+          </ol>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="modal-fav-toggle-btn" class="secondary-btn">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" id="modal-fav-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span id="modal-fav-text">Añadir a favoritos</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kitchen Mode Overlay -->
+  <div class="kitchen-overlay" id="kitchen-overlay">
+    <div class="kitchen-card">
+      <button class="kitchen-close" id="kitchen-close-btn">&times;</button>
+      
+      <div class="kitchen-progress-container">
+        <div class="kitchen-progress-bar" id="kitchen-progress-bar" style="width: 0%"></div>
+      </div>
+      
+      <div class="kitchen-meta">
+        <span id="kitchen-recipe-title">Título de la receta</span>
+        <span id="kitchen-step-counter">Paso 1 de 5</span>
+      </div>
+
+      <div class="kitchen-step-content" id="kitchen-step-text">
+        Contenido del paso de cocina...
+      </div>
+
+      <div class="kitchen-controls">
+        <button id="kitchen-prev-btn" class="secondary-btn-large" disabled>Atrás</button>
+        <button id="kitchen-next-btn" class="primary-btn-large">Siguiente</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shopping List Drawer/Modal -->
+  <div class="modal-overlay" id="shopping-list-modal">
+    <div class="modal-card max-width-medium">
+      <button class="modal-close" id="shopping-close-btn">&times;</button>
+      
+      <div class="shopping-header">
+        <h2>Lista de la Compra Semanal</h2>
+        <p>Agrupada automáticamente por categorías e ingredientes más habituales en los supermercados españoles.</p>
+      </div>
+
+      <div class="shopping-body">
+        <div class="shopping-categories-container" id="shopping-list-categories">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+      <div class="shopping-footer">
+        <button id="copy-shopping-list" class="primary-btn">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          Copiar al Portapapeles
+        </button>
+        <button id="print-shopping-list" class="secondary-btn">
+          Imprimir Lista 🖨️
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <p>&copy; 2026 Recetas Fáciles para Gente Normal. Cocina real para el día a día. Hecho con ❤️ para España.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
